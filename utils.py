@@ -16,6 +16,14 @@ foodStimFolder = '/static/foodstim60/'
 tdy = datetime.datetime.today()
 dt = tdy.strftime("%b-%d-%Y")
 
+sourceDict = {'face1': 'imgs/face1.jpg',
+              'face2': 'imgs/face2.jpg',
+              'place1': 'imgs/place1.jpg',
+              'place2': 'imgs/place2.jpg',
+              'bodypart1': 'imgs/bodypart1.jpg',
+              'bodypart2': 'imgs/bodypart2.jpg',
+              'sweet1': 'a', 'sweet2': 'b', 'sour1': 'c', 'sour2': 'd', 'bitter1': 'e', 'bitter2': 'f'
+              }
 
 def get_task_results_exists(subjectId, resultsfilename):
     return os.path.exists(os.path.join(dataDir, expId, subjectId, subjectId + '_' + resultsfilename + '.csv'))
@@ -79,6 +87,103 @@ def get_flavor_order(Nflavors, Ntimes):
     flaves = np.repeat(w, Ntimes)
     random.shuffle(flaves)
     return flaves
+
+def get_flavor_image_pairs(N,pairDict):
+       # ~10s per trial. 5 min is 300s which is about 30 trials. there are 5 pairs meaning 5 presentaions per pair.
+
+    stimulus1 = []
+    stimulus2 = []
+    trialType = []
+    for i in range(N):
+        if i>round(N/2): # if 5 repeats, in 2 out of them the flavor will be there first
+            t = 1
+        else:
+            t = 2
+        s1 = list(pairDict.keys())
+        s2 = list(pairDict.values())
+        for i,s in enumerate (s1):
+            stimulus1.append(s1[i])
+            stimulus2.append(s2[i])
+            trialType.append(t)
+
+    # shuffle both lists in same order
+    stimZipped = list(zip(stimulus1, stimulus2,trialType))
+    random.shuffle(stimZipped)
+    flavors,images,trialType = zip(*stimZipped)
+
+    return flavors, images,trialType
+
+def get_assoc_pairs(block):
+    if block == 1:
+        pairDict = {'sweet1': 'face1', 'sweet2': 'place1',
+                    'bitter1': 'face2', 'bitter2': 'bodypart1',
+                    'sour1': 'bodypart2', 'sour2': 'place2'}
+    elif block == 2:
+        pairDict = {'sweet1': 'bodypart1', 'sweet2': 'face2',
+                    'bitter1': 'bodypart2', 'bitter2': 'place1',
+                    'sour1': 'place2', 'sour2': 'face1'}
+    elif block == 3:
+        pairDict = {'sweet1': 'place2', 'sweet2': 'bodypart2',
+                    'bitter1': 'place1', 'bitter2': 'face1',
+                    'sour1': 'face2', 'sour2': 'bodypart1'}
+
+    return pairDict
+
+def get_pair_info(N,block):
+    pairDict =  get_assoc_pairs(block)
+
+    flavors, images,trialType = get_flavor_image_pairs(N, pairDict)
+
+    expVariables=[]
+    for i,trialt in enumerate(trialType):
+        trial = {}
+        if trialt == 1:
+            trial['TrialType'] = 'flavorFirst'
+        else:
+            trial['TrialType'] = 'imageFirst'
+        trial['TrialNum'] = i
+        trial['Image'] = images[i]
+        trial['flavor'] = flavors[i]
+        trial['flavorCode'] = sourceDict[flavors[i]]
+        trial['ImPath'] = sourceDict[images[i]]
+        expVariables.append(trial)
+
+    return expVariables
+
+def get_assoc_pairs_forMemTest(block):
+    pairDict =  get_assoc_pairs(block)
+    flavors = list(pairDict.keys())
+    images = list(pairDict.values())
+    trialN = len(flavors)
+    expVariables = []
+    for i in range(trialN):
+        trial = {}
+        trial['TrialNum'] = i
+        trial['flavor'] = flavors[i]
+        trial['flavorCode'] = sourceDict[flavors[i]]
+        # images
+        corim = sourceDict[images[i]]
+        # get other images and draw ne for memory test
+        otherimages = [images[j] for j,k in enumerate(images) if k!=images[i]]
+        drawim = random.randint(0, len(otherimages)-1)
+        otherim = sourceDict[otherimages[drawim]]
+
+        # which is left and which is right
+        drawside = random.randint(0, 1)
+        if drawside==0:
+            trial['CorrectAnswer'] = 'L'
+            trial['ImageLeft'] =  corim
+            trial['ImageRight'] = otherim
+
+        elif drawside==1:
+            trial['CorrectAnswer'] = 'R'
+            trial['ImageRight'] =  corim
+            trial['ImageLeft'] = otherim
+
+        expVariables.append(trial)
+    return expVariables
+
+
 
 
 '''for RATING'''

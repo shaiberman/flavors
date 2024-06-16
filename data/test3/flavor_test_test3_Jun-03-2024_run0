@@ -1,0 +1,56 @@
+,Vol,Time,Key,Flavor,Event
+0,0.0,0.0,NaN,NaN,NaN
+1,1.0,2.8099864721298218e-05,5,NaN,First TR
+2,0.0,12.791045299964026,NaN,a,flavor
+3,0.0,22.308888799976557,NaN,a,flavor
+4,1.0,27.674439899856225,[<psychopy.hardware.keyboard.KeyPress object at 0x00000173FB6C3DC0>],NaN,TR
+5,2.0,31.261434099869803,[<psychopy.hardware.keyboard.KeyPress object at 0x00000173FB6C3AF0>],NaN,TR
+6,2.0,32.824844299815595,NaN,a,flavor
+7,3.0,34.4629453998059,[<psychopy.hardware.keyboard.KeyPress object at 0x00000173FB6C3760>],NaN,TR
+8,4.0,37.29065330000594,[<psychopy.hardware.keyboard.KeyPress object at 0x00000173FB6C3BE0>],NaN,TR
+9,5.0,39.07803380000405,[<psychopy.hardware.keyboard.KeyPress object at 0x00000173FB6C3FD0>],NaN,TR
+10,6.0,41.19478859985247,[<psychopy.hardware.keyboard.KeyPress object at 0x00000173FB6C3A30>],NaN,TR
+11,7.0,42.2302756998688,[<psychopy.hardware.keyboard.KeyPress object at 0x00000173FB6C3280>],NaN,TR
+12,7.0,46.841921999817714,NaN,a,flavor
+13,7.0,56.359409199794754,NaN,a,flavor
+14,8.0,65.7431558999233,[<psychopy.hardware.keyboard.KeyPress object at 0x00000173FB6B7EB0>],NaN,TR
+15,8.0,67.87575479992665,NaN,a,flavor
+16,8.0,80.39248539996333,NaN,a,flavor
+17,8.0,96.90819959994406,NaN,a,flavor
+18,8.0,107.92505520000122,NaN,a,flavor
+19,9.0,113.69450560002588,[<psychopy.hardware.keyboard.KeyPress object at 0x00000173FB6B7DF0>],NaN,TR
+20,10.0,117.94290499994531,[<psychopy.hardware.keyboard.KeyPress object at 0x00000173FB6B7940>],NaN,TR
+21,10.0,117.94640859984793,NaN,a,flavor
+22,10.0,127.45796279981732,NaN,a,flavor
+23,10.0,141.97473619994707,NaN,a,flavor
+24,10.0,154.9965668998193,NaN,a,flavor
+25,10.0,164.00961959990673,NaN,a,flavor
+26,10.0,177.02481089998037,NaN,a,flavor
+27,11.0,179.4268952999264,[<psychopy.hardware.keyboard.KeyPress object at 0x00000173F94BFF10>],NaN,TR
+28,12.0,181.17524339980446,[<psychopy.hardware.keyboard.KeyPress object at 0x00000173F94BF520>],NaN,TR
+29,13.0,182.27473769988865,[<psychopy.hardware.keyboard.KeyPress object at 0x00000173F94BF550>],NaN,TR
+30,13.0,188.04204879980534,NaN,a,flavor
+31,13.0,199.05649069999345,NaN,a,flavor
+32,14.0,200.77326549985446,[<psychopy.hardware.keyboard.KeyPress object at 0x00000173F9357F40>],NaN,TR
+33,15.0,204.44036409980617,[<psychopy.hardware.keyboard.KeyPress object at 0x00000173FB6C3850>],NaN,TR
+34,16.0,205.99705609981902,[<psychopy.hardware.keyboard.KeyPress object at 0x00000173FB6C35E0>],NaN,TR
+35,16.0,208.07533319992945,NaN,a,flavor
+36,16.0,221.0911075999029,NaN,a,flavor
+37,17.0,227.54195809992962,[<psychopy.hardware.keyboard.KeyPress object at 0x00000173FB6C3730>],NaN,TR
+38,17.0,231.10735299997032,NaN,a,flavor
+39,17.0,241.6253013999667,NaN,a,flavor
+40,17.0,251.14165789983235,NaN,a,flavor
+41,18.0,261.82516809995286,[<psychopy.hardware.keyboard.KeyPress object at 0x00000173F94BFB80>],NaN,TR
+42,19.0,262.26053630001843,[<psychopy.hardware.keyboard.KeyPress object at 0x00000173F94D2F70>],NaN,TR
+43,20.0,262.978236899944,[<psychopy.hardware.keyboard.KeyPress object at 0x00000173FB6C3130>],NaN,TR
+44,20.0,264.6579676999245,NaN,a,flavor
+45,20.0,274.1745829998981,NaN,a,flavor
+46,21.0,281.6936594999861,[<psychopy.hardware.keyboard.KeyPress object at 0x00000173F8E3FC70>],NaN,TR
+47,22.0,281.97805079980753,[<psychopy.hardware.keyboard.KeyPress object at 0x00000173F94BFE80>],NaN,TR
+48,22.0,284.1925025000237,NaN,a,flavor
+49,22.0,298.2075151000172,NaN,a,flavor
+50,23.0,303.60856510000303,[<psychopy.hardware.keyboard.KeyPress object at 0x00000173FB6C3C10>],NaN,TR
+51,23.0,309.72502040001564,NaN,a,flavor
+52,23.0,322.24204379995354,NaN,a,flavor
+53,23.0,333.25938229984604,NaN,a,flavor
+54,24.0,341.50735650002025,[<psychopy.hardware.keyboard.KeyPress object at 0x00000173FB6C3B20>],NaN,TR
